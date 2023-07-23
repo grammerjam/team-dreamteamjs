@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script defer src ="index.js"></script>
+  <title>Project 3 -  Error404</title>
+  <style l>
+
+  </style>
+</head>
+<body>
+  <div class="main-container">
+    <div class="left-container">
+      <div class="team-name-header">
+        <nav>Team Error 404</nav>
+      </div>
+      <div class="card1">
+        <div class="card-logo">
+          <img src="images/card-logo.svg">
+        </div>
+        <div class="card-number">
+          <h1>1111 2222 3333 4444</h1>
+        </div>
+        <div class="bottom-of-card">
+          <div class="cardholder-name">
+            <small type="text" id="duplicateField">John Doe</small>
+          </div>
+          <div class="card-exp-date">
+            <div>01/01</div>
+          </div>
+        </div>
+      </div>
+      <div class="card2">
+      </div>
+    </div>
+    <div class="right-container">
+      <div class="form">
+          <form id="form">
+            <div class="labels">
+              <label class="cardwords" for="cname">Name on Card</label>
+            </div>
+            <div class="inputs">
+              <input class="cardinput" type="text" id="cname" name="cardname" placeholder="e.g. John More Doe">
+              <small>error message</small>
+            </div>
+            <div class="labels">
+              <label class="cardwords" id="ccnum">Credit card number</label>
+            </div>
+            <div class="inputs">
+              <input class="cardinput" type="text" id="cnum" name="cardnumber" placeholder="e.g. 1111-2222-3333-4444">
+              <small>error message</small>
+              <div class="expiration-cvc">
+                <div class="labels" id="labels-expiration-cvc">
+                  <label class="cardwords-exp" for="expmonth">Exp. Date (MM/YY)</label>
+                  <label class="cardwords-cvc" for="cvc">CVC</label>
+                </div>
+                <div class="inputs" id="inputs-expiration-cvc">
+                  <input class="cardmonth" type="text" id="expmonth" name="expmonth" placeholder="07">
+                  <input class="cardyear" type="text" id="expyear" name="expyear" placeholder="27">
+                  <small>error message</small>
+                  <input class="cardcvc" type="text" id="cvc" name="cvc" placeholder="e.g. 333">
+                  <small>error message</small>
+                </div>
+              </div>
+            </div>
+            <button>Confirm</button>
+          </form>
+        <!--
+        <div class="confirmation">
+          <img src="images/icon-complete.svg">
+          <h1>Thank you!</h1>
+          <small>We've added your card details</small>
+          <button>Continue</button>
+        </div>
+      -->
+      </div>
+    </div>
+  </div>
+
+<!--  Notes from 5/16/23 w/Jepson
+      * use React for the card when user is entering the card number
+      * use React for when the user clicks the submit button and a confirmation page renders
+      * use Yup library for form validations
+      * will deal with the card image last
+      * for today, push to main branch - do not create individual branches YET
+
+      Notes from 5/17/23
+      * Lia:
+        - Add a nav bar with your Team Name centered
+        - add Yup validations
+        - add the 'submit' button to the form
+        - style the form if have time
+      * deal with the react credit card # in live time later
+      * Jepson:
+        - work with the styling of the form
+        - work on mobile design
+
+      Notes from 5/24/23
+      * Lia:
+        - finish the confirm page with JS
+        - Will re-deploy via Netlify tomorrow for the final results to submit after Jepson is done tonight
+      * Jepson:
+        - try/finish the credit card value to display in real time as user types
+        - submit a PR for Jimmy once completed
+
+      Responsibilites:
+      * Jepson:
+        - complete the form in basic HTML for the right container
+        - style the form (for tomorrow when we create our own branch
+      * Lia:
+        - complete css for backgrounds for 2 containers
+        - complete Yup validations once Jepson is done
+-->
+</body>
+</html>
