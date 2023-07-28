@@ -1,10 +1,9 @@
 
 ________________________________
 
-3rd Project
+Project 3A
 
-Under your main folder, create a folder named /project3/ where your project 3 files will reside.
-Note: Add the provided Readme and Style Guide files under project3/
+Note: Add the provided Readme and Style Guide files under project3A/
 
 Exercise:
 
@@ -44,4 +43,4 @@ Create 2 forms and card displays on the page, one for a Visa card format and for
 
 Happy Coding!
 
-Drop-Dead Date: Friday 9 AM EST
+Drop-Dead Date: Monday 9 AM EST
