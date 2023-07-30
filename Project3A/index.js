@@ -4,6 +4,7 @@ const creditCardNumber = document.getElementById("cnum");
 const expMonth = document.getElementById("expmonth");
 const expYear = document.getElementById("expyear");
 const cvc = document.getElementById("cvc");
+const confirmation = document.getElementById("confirmation-thank") 
 
 // this is suppose to be the code for real time work but it's not working for some reason
 //in full tranparency not my code but i understand how it work so i didnt right it over
@@ -15,24 +16,6 @@ const cvc = document.getElementById("cvc");
 form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    checkInputs();
-    //if all required fields are filled out
-    // display the confirmation
-    // else
-    // do nothing & show the form
-    // if(allRequiredFieldsAreFilledOut() === true){
-    //     //display the confirmation
-    //     document.getElementById("confirmation").style.display = "block";
-    //     //hide the form
-    //     document.getElementById("form").style.display = "none";
-    // }
-});
-
-// function allRequiredFieldsAreFilledOut(){
-//
-// }
-
-function checkInputs() {
     //get values from inputs
     const cardHolderValue = cardHolderName.value.trim();
     const creditCardValue = creditCardNumber.value.trim();
@@ -54,7 +37,24 @@ function checkInputs() {
 
     //check for valid CVC
     checksIfValidFormatFor(cvcValue, cvc, "Cannot be blank", "Invalid Format. Numbers only");
-}
+    //if all required fields are filled out
+    // display the confirmation
+    // else
+    // do nothing & show the form
+     if(cardHolderValue !== '' && creditCardValue !== '' && expMonthValue !== '' && cvcValue !== ''){
+        //display the confirmation
+        document.getElementById("confirmation-thank").style.display = "block";
+        //hide the form
+        document.getElementById("form").style.display = "none";
+     }
+});
+
+//  function allRequiredFieldsAreFilledOut(){
+//  }
+
+// function checkInputs() {
+   
+// }
 
 function checkForValidCardholderName(cardholderValue, errorMessage){
     //check for valid cardholder name
