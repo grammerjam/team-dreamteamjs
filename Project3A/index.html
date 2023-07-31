@@ -7,19 +7,19 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet"> -->
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <script defer src ="index.js"></script>
-  <title>Project 3 -  Error404</title>
-  <style l>
-
-  </style>
+  <title>Project 3 -  Dreamteam.js</title>
 </head>
+
+
 <body>
   <div class="main-container">
     <div class="left-container">
       <div class="team-name-header">
-        <nav>Team Error 404</nav>
+        <nav> DREAMTEAM.JS</nav>
       </div>
       <div class="card1">
         <div class="card-logo">
@@ -30,7 +30,7 @@
         </div>
         <div class="bottom-of-card">
           <div class="cardholder-name">
-            <small type="text" id="duplicateField">John Doe</small>
+            <small type="text" id="duplicateField">JOHN DOE</small>
           </div>
           <div class="card-exp-date">
             <div>01/01</div>
@@ -44,21 +44,21 @@
       <div class="form">
           <form id="form">
             <div class="labels">
-              <label class="cardwords" for="cname">Name on Card</label>
+              <label class="cardwords" for="cname">CARDHOLDER NAME</label>
             </div>
             <div class="inputs">
               <input class="cardinput" type="text" id="cname" name="cardname" placeholder="e.g. John More Doe">
               <small>error message</small>
             </div>
             <div class="labels">
-              <label class="cardwords" id="ccnum">Credit card number</label>
+              <label class="cardwords" id="ccnum">CARD NUMBER</label>
             </div>
             <div class="inputs">
               <input class="cardinput" type="text" id="cnum" name="cardnumber" placeholder="e.g. 1111-2222-3333-4444">
               <small>error message</small>
               <div class="expiration-cvc">
                 <div class="labels" id="labels-expiration-cvc">
-                  <label class="cardwords-exp" for="expmonth">Exp. Date (MM/YY)</label>
+                  <label class="cardwords-exp" for="expmonth">EXP. DATE (MM/YY)</label>
                   <label class="cardwords-cvc" for="cvc">CVC</label>
                 </div>
                 <div class="inputs" id="inputs-expiration-cvc">
@@ -70,19 +70,37 @@
                 </div>
               </div>
             </div>
-            <button>Confirm</button>
+            <button id="submit">Confirm</button>
           </form>
-        <!--
-        <div class="confirmation">
-          <img src="images/icon-complete.svg">
-          <h1>Thank you!</h1>
-          <small>We've added your card details</small>
-          <button>Continue</button>
+          
+          <!-- Thank you form when confirm button meets requirements -->
+          <div
+          class="thankyou-form"
+          id="confirmation-thank"
+        >
+          <img
+            src="images/icon-complete.svg"
+            alt="complete"
+            class="thankyou-img"
+          />
+          <h1 class="thankyou-title">Thank You!</h1>
+          <p class="mt-4 text-dark-gray self-center">
+            We've added your card details
+          </p>
+          <button
+            class="bg-dark-violet text-white mt-8 h-12 w-80 rounded-md tracking-wide"
+            id="button"
+          >
+            Continue
+          </button>
         </div>
-      -->
+         
       </div>
     </div>
   </div>
+
+
+
 
 <!--  Notes from 5/16/23 w/Jepson
       * use React for the card when user is entering the card number
