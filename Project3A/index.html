@@ -24,14 +24,14 @@
           <img src="images/card-logo.svg">
         </div>
         <div class="card-number">
-          <h1>1111 2222 3333 4444</h1>
+          <h1 type="text" id="duplicateFieldnum">1111 2222 3333 4444</h1>
         </div>
         <div class="bottom-of-card">
           <div class="cardholder-name">
             <small type="text" id="duplicateField">JOHN DOE</small>
           </div>
           <div class="card-exp-date">
-            <div>01/01</div>
+            <div><small type="text" id="duplicateFieldmonth">01</small>/<small small type="text" id="duplicateFieldyear">01</small></div>
           </div>
         </div>
       </div>
@@ -133,5 +133,39 @@
         - complete css for backgrounds for 2 containers
         - complete Yup validations once Jepson is done
 -->
+<script>
+
+   function handleCardNameKeyup() {
+            const inputElement = document.getElementById("cname");
+            const outputElement = document.getElementById("duplicateFieldname");
+            outputElement.textContent = inputElement.value;
+    }
+   function handleCardNumberKeyup() {
+            const inputElement = document.getElementById("cnum");
+            const outputElement = document.getElementById("duplicateFieldnum");
+            outputElement.textContent = inputElement.value;
+    }
+   function handleCardMonthKeyup() {
+            const inputElement = document.getElementById("expmonth");
+            const outputElement = document.getElementById("duplicateFieldmonth");
+            outputElement.textContent = inputElement.value;
+    }
+   function handleCardYearKeyup() {
+            const inputElement = document.getElementById("expyear");
+            const outputElement = document.getElementById("duplicateFieldyear");
+            outputElement.textContent = inputElement.value;
+    }
+
+
+  //  const cardcardyearInput = document.getElementById("cardyear");
+  // const cardcardcvcnInput = document.getElementById("cardcvc");
+  // const cardnameInput = document.getElementById("cname");
+
+  // Adding keyup event listeners to the input fields
+  document.getElementById("cname").addEventListener("keyup", handleCardNameKeyup);
+  document.getElementById("cnum").addEventListener("keyup", handleCardNumberKeyup);
+  document.getElementById("expmonth").addEventListener("keyup", handleCardMonthKeyup);
+  document.getElementById("expyear").addEventListener("keyup", handleCardYearKeyup);
+</script>
 </body>
 </html>

@@ -4,6 +4,7 @@ const creditCardNumber = document.getElementById("cnum");
 const expMonth = document.getElementById("expmonth");
 const expYear = document.getElementById("expyear");
 const cvc = document.getElementById("cvc");
+const confirmation = document.getElementById("confirmation-thank") 
 
 // this is suppose to be the code for real time work but it's not working for some reason
 //in full tranparency not my code but i understand how it work so i didnt right it over
@@ -40,6 +41,7 @@ form.addEventListener('submit', (e) => {
     // display the confirmation
     // else
     // do nothing & show the form
+
     if(checkForValidCardholderName !== '' && checksIfValidFormatFor !== ''){
     //     //display the confirmation
          document.getElementById("confirmation-thankyou").style.display = "block";
@@ -47,6 +49,7 @@ form.addEventListener('submit', (e) => {
          document.getElementById("form").style.display = "none";
      }
 });
+
 
 
 

@@ -88,7 +88,7 @@ body {
   margin-left: 50px;
   min-height: 400px;
   width: 499px;
-  display: none;
+  display: flex;
   padding: 10px;
   align-items: center;
   padding-top: 2rem;
@@ -153,7 +153,12 @@ label {
 
 /* for the word cvc*/
 .cardwords-cvc {
+
   margin-right: 230px;
+
+   
+    
+
 }
 .cardcvc {
   height: 30px;
@@ -215,7 +220,7 @@ button {
 /*  Thank you / Confirmation Form */
 
 .thankyou-form {
-  display: flex;
+  display: none;
   padding-top: 3rem;
   justify-content: center;
   flex-direction: column;
@@ -424,7 +429,7 @@ button {
     width: 90%;
     border: 10px solid black;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 6px;
     display: block;
     font-size: 18px;
     margin-left: 5px;
