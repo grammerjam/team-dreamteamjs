@@ -15,24 +15,6 @@ const cvc = document.getElementById("cvc");
 form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    checkInputs();
-    //if all required fields are filled out
-    // display the confirmation
-    // else
-    // do nothing & show the form
-    // if(allRequiredFieldsAreFilledOut() === true){
-    //     //display the confirmation
-    //     document.getElementById("confirmation").style.display = "block";
-    //     //hide the form
-    //     document.getElementById("form").style.display = "none";
-    // }
-});
-
-// function allRequiredFieldsAreFilledOut(){
-//
-// }
-
-function checkInputs() {
     //get values from inputs
     const cardHolderValue = cardHolderName.value.trim();
     const creditCardValue = creditCardNumber.value.trim();
@@ -54,7 +36,19 @@ function checkInputs() {
 
     //check for valid CVC
     checksIfValidFormatFor(cvcValue, cvc, "Cannot be blank", "Invalid Format. Numbers only");
-}
+    //if all required fields are filled out
+    // display the confirmation
+    // else
+    // do nothing & show the form
+    if(checkForValidCardholderName !== '' && checksIfValidFormatFor !== ''){
+    //     //display the confirmation
+         document.getElementById("confirmation-thankyou").style.display = "block";
+    //     //hide the form
+         document.getElementById("form").style.display = "none";
+     }
+});
+
+
 
 function checkForValidCardholderName(cardholderValue, errorMessage){
     //check for valid cardholder name
