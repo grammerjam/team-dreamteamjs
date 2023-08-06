@@ -8,8 +8,8 @@
 
 body{
     display: flex;
-    font-family: "Space Grotesk", "sans-serf";
-    font-size: 16px;
+    font-family: "Space Grotesk", "sans-serf";  
+    font-weight: 100;
 }
 
 .team-name-header{
@@ -82,6 +82,17 @@ body{
     margin-left: 250px;
 }
 
+label{
+  color: hsl(278, 75%, 15%);
+  letter-spacing: 2px;
+  font-size: 100;
+}
+
+::placeholder{
+  font-family: "Space Grotesk", "sans-serf";
+  color: hsl(270, 3%, 87%);
+}
+
 /* the form */
 .form {
     margin-top: 150px;
@@ -104,6 +115,7 @@ body{
     padding-left: 1rem/* 20px */;
     padding-right: 1rem/* 20px */;  
     border-width: 1px;
+    --tw-border-opacity: 1;
     border-color: rgb(209 213 219 / var(--tw-border-opacity));
     border-radius: 0.375rem/* 6px */; 
 }
@@ -127,6 +139,7 @@ body{
     height: 30px;
     width: 70px;
     border-radius: 0.375rem;
+    --tw-border-opacity: 1;
     border-color: rgb(209 213 219 / var(--tw-border-opacity));
     border-radius: 0.375rem/* 6px */; 
     padding-left: .5rem;
@@ -142,7 +155,11 @@ body{
 .cardcvc {
     height: 30px;
     width: 100%;
-    border-radius: 5px;
+    border-radius: 6px;
+    border-width: 1px;
+    --tw-border-opacity: 1;
+    border-color: rgb(209 213 219 / var(--tw-border-opacity));
+    padding-right: 10px;
 }
 
 /* margins & paddings for error messages */
@@ -163,13 +180,14 @@ body{
     visibility: hidden;
 }
 
-.inputs.success input {
+/* .inputs.success input {
     border: green solid 2px;
-}
+} */
 
 /* error messages */
 .inputs.error input {
     border: red solid 2px;
+    
 }
 
 .inputs.error small{
@@ -195,18 +213,18 @@ button {
 
 .thankyou-form{
     display: none;
-    padding-top: 3rem;
-    justify-content: center;
+    padding-top: 14rem;
     flex-direction: column;
-    margin-left: 24rem;
+    margin-left: 7rem;
     width: auto;
+    justify-content: center;
+    align-items: center;
     
    }
    
    .thankyou-img{
-   width: 4rem;
-   align-self: center;
-   height: 4rem;
+   width: 5rem;
+   height: 5rem;
    margin-top: 1rem;
    }
    
@@ -214,12 +232,14 @@ button {
     font-size: 1.5rem;
     line-height: 2rem;
     margin-top: 1rem;
-    align-self: center;
+    padding: 1rem;
+    letter-spacing: 4px;
+    font-weight: 100;
    }
    
-   .thank-you-info{
+   .thankyou-info{
    margin-top: 1rem;
-   align-self: center;
+   color: gray;
    }
    
    .thankyou-button{
@@ -227,10 +247,22 @@ button {
    background-color: hsl(278, 68%, 11%);
    margin-top: 2rem;
    height: 3rem;
-   width: 20rem;
+   width: 24rem;
    border-radius: 6px;
    letter-spacing: 0.025em;
+   font-family: "Space Grotesk", "sans-serf";  
+   font-weight: 100;
    }
+
+   .form-reset .inputs.success input{
+    /* Add your CSS reset styles here */
+    /* For example, you can reset margin, padding, font size, etc. */
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    
+  }
+
 
 /* styling for the confirmation page */
 
@@ -241,9 +273,6 @@ button {
         padding: 0;
         box-sizing: border-box;
     }    
-    body{
-        font-family: 'Play', sans-serif;
-    }
     .main-container{
         display: flex;
         flex-direction: column
@@ -396,15 +425,15 @@ button {
     
     /* styling for the submit button */
     button {
-        color: white;
-        background-color: black;
-        width: 90%;
-        border: 10px solid black;
-        padding: 10px;
-        border-radius: 5px;
-        display: block;
-        font-size: 18px;
-        margin-left: 5px;
+      color: white;
+      background-color:hsl(278, 68%, 11%) ;
+      width: 100%;
+      border: 2px solid black;
+      padding: 10px;
+      border-radius: 6px;
+      display: block;
+      font-size: 18px;
+      font-family: "Space Grotesk", "sans-serf"; 
     }
   }
 

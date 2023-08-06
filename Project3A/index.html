@@ -30,10 +30,10 @@
         </div>
         <div class="bottom-of-card">
           <div class="cardholder-name">
-            <small type="text" id="duplicateFieldname">JOHN DOE</small>
+            <small type="text" id="duplicateFieldname">JOHN WICK</small>
           </div>
           <div class="card-exp-date">
-            <div><small type="text" id="duplicateFieldmonth">01</small>/<small small type="text" id="duplicateFieldyear">01</small></div>
+            <div><small type="text" id="duplicateFieldmonth">01</small>/<small small type="text" id="duplicateFieldyear">27</small></div>
           </div>
         </div>
       </div>
@@ -47,7 +47,7 @@
               <label class="cardwords" for="cname">CARDHOLDER NAME</label>
             </div>
             <div class="inputs">
-              <input class="cardinput" type="text" id="cname" name="cardname" placeholder="e.g. John More Doe">
+              <input class="cardinput" type="text" id="cname" name="cardname" placeholder="e.g. John Wick">
               <small>error message</small>
             </div>
             <div class="labels">
@@ -62,7 +62,7 @@
                   <label class="cardwords-cvc" for="cvc">CVC</label>
                 </div>
                 <div class="inputs" id="inputs-expiration-cvc">
-                  <input class="cardmonth" type="text" id="expmonth" name="expmonth" placeholder="07">
+                  <input class="cardmonth" type="text" id="expmonth" name="expmonth" placeholder="01">
                   <input class="cardyear" type="text" id="expyear" name="expyear" placeholder="27">
                   <small>error message</small>
                   <input class="cardcvc" type="text" id="cvc" name="cvc" placeholder="e.g. 333">
@@ -72,6 +72,7 @@
             </div>
             <button id="submit">Confirm</button>
           </form>
+        </div>
           
           <!-- Thank you form when confirm button meets requirements -->
           <div
@@ -83,19 +84,19 @@
             alt="complete"
             class="thankyou-img"
           />
-          <h1 class="thankyou-title">Thank You!</h1>
-          <p class="mt-4 text-dark-gray self-center">
+          <h1 class="thankyou-title">THANK YOU!</h1>
+          <p class="thankyou-info">
             We've added your card details
           </p>
           <button
-            class="bg-dark-violet text-white mt-8 h-12 w-80 rounded-md tracking-wide"
-            id="button"
+            class="thankyou-button"
+            id="continue-button"
           >
             Continue
           </button>
         </div>
          
-      </div>
+      
     </div>
   </div>
 
@@ -142,21 +143,56 @@
             const inputElement = document.getElementById("cname");
             const outputElement = document.getElementById("duplicateFieldname");
             outputElement.textContent = inputElement.value;
+            
+            
+            // Check if the input field is empty
+  if (inputElement.value === '') {
+    // Set the default value ("JOHN WICK") in the output element with the <small> tag
+    outputElement.innerHTML = 'JOHN WICK'
+  } else {
+    // Remove the <small> tag if the input is not empty
+    outputElement.innerHTML = inputElement.value;
+  }
+           
     }
    function handleCardNumberKeyup() {
             const inputElement = document.getElementById("cnum");
             const outputElement = document.getElementById("duplicateFieldnum");
             outputElement.textContent = inputElement.value;
+
+            if (inputElement.value === '') {
+    // Set the default value ("JOHN WICK") in the output element with the <small> tag
+    outputElement.innerHTML = '1111 2222 3333 4444'
+  } else {
+    // Remove the <small> tag if the input is not empty
+    outputElement.innerHTML = inputElement.value;
+  }
     }
    function handleCardMonthKeyup() {
             const inputElement = document.getElementById("expmonth");
             const outputElement = document.getElementById("duplicateFieldmonth");
             outputElement.textContent = inputElement.value;
+
+            if (inputElement.value === '') {
+    // Set the default value ("JOHN WICK") in the output element with the <small> tag
+    outputElement.innerHTML = '01'
+  } else {
+    // Remove the <small> tag if the input is not empty
+    outputElement.innerHTML = inputElement.value;
+  }            
     }
    function handleCardYearKeyup() {
             const inputElement = document.getElementById("expyear");
             const outputElement = document.getElementById("duplicateFieldyear");
             outputElement.textContent = inputElement.value;
+
+            if (inputElement.value === '') {
+    // Set the default value ("JOHN WICK") in the output element with the <small> tag
+    outputElement.innerHTML = '27'
+  } else {
+    // Remove the <small> tag if the input is not empty
+    outputElement.innerHTML = inputElement.value;
+  }
     }
 
 
@@ -169,6 +205,28 @@
   document.getElementById("cnum").addEventListener("keyup", handleCardNumberKeyup);
   document.getElementById("expmonth").addEventListener("keyup", handleCardMonthKeyup);
   document.getElementById("expyear").addEventListener("keyup", handleCardYearKeyup);
+
+
+
+//   let rememberedInput = ''
+
+
+// function rememberInput() {
+//   const inputElement = document.getElementById('duplicateFieldnum')
+//   rememberedInput = inputElement.value
+// }
+
+// function restoreInput() {
+//   const inputElement = document.getElementById('duplicateFieldnum')
+//   if(!inputElement.value.trim()){
+//       inputElement.value = rememberInput
+//   }
+// }
+
+
+// document.getElementById('duplicateFieldnum').addEventListener()
+
+
 </script>
 </body>
 </html>
