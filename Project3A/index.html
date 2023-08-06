@@ -144,15 +144,7 @@
             const outputElement = document.getElementById("duplicateFieldname");
             outputElement.textContent = inputElement.value;
             
-            
-            // Check if the input field is empty
-  if (inputElement.value === '') {
-    // Set the default value ("JOHN WICK") in the output element with the <small> tag
-    outputElement.innerHTML = 'JOHN WICK'
-  } else {
-    // Remove the <small> tag if the input is not empty
-    outputElement.innerHTML = inputElement.value;
-  }
+            inputElement.value === '' ? outputElement.innerHTML = 'JOHN WICK' :  outputElement.innerHTML = inputElement.value;
            
     }
    function handleCardNumberKeyup() {
@@ -160,40 +152,29 @@
             const outputElement = document.getElementById("duplicateFieldnum");
             outputElement.textContent = inputElement.value;
 
-            if (inputElement.value === '') {
-    // Set the default value ("JOHN WICK") in the output element with the <small> tag
-    outputElement.innerHTML = '1111 2222 3333 4444'
-  } else {
-    // Remove the <small> tag if the input is not empty
-    outputElement.innerHTML = inputElement.value;
-  }
+            inputElement.value === '' ? outputElement.innerHTML = '1111 2222 3333 4444' :  outputElement.innerHTML = inputElement.value;
+
     }
+
    function handleCardMonthKeyup() {
             const inputElement = document.getElementById("expmonth");
             const outputElement = document.getElementById("duplicateFieldmonth");
             outputElement.textContent = inputElement.value;
 
-            if (inputElement.value === '') {
-    // Set the default value ("JOHN WICK") in the output element with the <small> tag
-    outputElement.innerHTML = '01'
-  } else {
-    // Remove the <small> tag if the input is not empty
-    outputElement.innerHTML = inputElement.value;
-  }            
+            inputElement.value === '' ? outputElement.innerHTML = '01' :  outputElement.innerHTML = inputElement.value;
+           
     }
+
    function handleCardYearKeyup() {
             const inputElement = document.getElementById("expyear");
             const outputElement = document.getElementById("duplicateFieldyear");
             outputElement.textContent = inputElement.value;
 
-            if (inputElement.value === '') {
-    // Set the default value ("JOHN WICK") in the output element with the <small> tag
-    outputElement.innerHTML = '27'
-  } else {
-    // Remove the <small> tag if the input is not empty
-    outputElement.innerHTML = inputElement.value;
-  }
-    }
+            inputElement.value === '' ? outputElement.innerHTML = '27' :  outputElement.innerHTML = inputElement.value;
+   }
+
+
+   
 
 
   //  const cardcardyearInput = document.getElementById("cardyear");
@@ -205,26 +186,6 @@
   document.getElementById("cnum").addEventListener("keyup", handleCardNumberKeyup);
   document.getElementById("expmonth").addEventListener("keyup", handleCardMonthKeyup);
   document.getElementById("expyear").addEventListener("keyup", handleCardYearKeyup);
-
-
-
-//   let rememberedInput = ''
-
-
-// function rememberInput() {
-//   const inputElement = document.getElementById('duplicateFieldnum')
-//   rememberedInput = inputElement.value
-// }
-
-// function restoreInput() {
-//   const inputElement = document.getElementById('duplicateFieldnum')
-//   if(!inputElement.value.trim()){
-//       inputElement.value = rememberInput
-//   }
-// }
-
-
-// document.getElementById('duplicateFieldnum').addEventListener()
 
 
 </script>

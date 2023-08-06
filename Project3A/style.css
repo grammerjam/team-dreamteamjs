@@ -275,7 +275,7 @@ button {
     }    
     .main-container{
         display: flex;
-        flex-direction: column
+        flex-direction: column;
     }
 
     .left-container{
@@ -284,12 +284,14 @@ button {
         background-size: cover;
         height: 250px;
         width: 100%;
+        position: relative;
+        z-index: 2;
     }
     
     .right-container{
         background-color: white;
-        position: absolute;
-        z-index: -1;
+        position: relative;
+        z-index: 1;   
     }
 
     .card1 {
@@ -346,6 +348,7 @@ button {
         min-height: 400px;
         display: flex;
         width: 100%;
+        margin-top: 20px;
     }
 
     .form input{
@@ -372,7 +375,7 @@ button {
     }
     /* input fields for CVC */
     .cardwords-cvc {
-        margin-right: 100px;
+        margin-right: 200px;
     }
 
     .cardyear {

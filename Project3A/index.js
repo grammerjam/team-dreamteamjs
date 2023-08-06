@@ -51,6 +51,7 @@ form.addEventListener('submit', e => {
   if (cardHolderValue !== '' && creditCardValue !== '' && expMonthValue !== '' && cvcValue !== '') {
     //display the confirmation
     document.getElementById('confirmation-thank').style.display = 'flex'
+    e.preventDefault()
     //hide the form
     document.getElementById('form').style.display = 'none'
   }
@@ -58,9 +59,13 @@ form.addEventListener('submit', e => {
 })
 
 
+function resetForm(){
+    const form = document.getElementById('form')
+    form.reset()
+}
+
 function showForm() {
   document.getElementById('confirmation-thank').style.display = 'none'
-
   document.getElementById('form').style.display = 'block'
 
   resetForm()
@@ -68,7 +73,6 @@ function showForm() {
 
 const resetButton = document.getElementById('continue-button');
 resetButton.addEventListener('click', () => {
-    form.reset
 
   showForm();
 });
