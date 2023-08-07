@@ -1,129 +1,115 @@
-const form = document.getElementById('form')
-const cardHolderName = document.getElementById('cname')
-const creditCardNumber = document.getElementById('cnum')
-const expMonth = document.getElementById('expmonth')
-const expYear = document.getElementById('expyear')
-const cvc = document.getElementById('cvc')
-const confirmation = document.getElementById('confirmation-thank')
-const continueButton = document.getElementById('continue-button')
-
-// this is suppose to be the code for real time work but it's not working for some reason
-//in full tranparency not my code but i understand how it work so i didnt right it over
-//const duplicateField = document.getElementById("duplicateField");
-//cardHolderName.addEventListener('keyup',() => {
-//    duplicateField.value = input.value;
-//});
+const form = document.getElementById('form');
+const cardHolderName = document.getElementById('cname');
+const creditCardNumber = document.getElementById('cnum');
+const expMonth = document.getElementById('expmonth');
+const expYear = document.getElementById('expyear');
+const cvc = document.getElementById('cvc');
+const confirmation = document.getElementById('confirmation-thank');
+const continueButton = document.getElementById('continue-button');
 
 form.addEventListener('submit', e => {
-  e.preventDefault()
+  e.preventDefault();
 
-  
-  //get values from inputs
-  const cardHolderValue = cardHolderName.value.trim()
-  const creditCardValue = creditCardNumber.value.trim()
-  const expMonthValue = expMonth.value.trim()
-  const expYearValue = expYear.value.trim()
-  const cvcValue = cvc.value.trim()
+  // Get values from inputs
+  const cardHolderValue = cardHolderName.value.trim();
+  const creditCardValue = creditCardNumber.value.trim();
+  const expMonthValue = expMonth.value.trim();
+  const expYearValue = expYear.value.trim();
+  const cvcValue = cvc.value.trim();
 
-  //check for valid cardholder name
-  checkForValidCardholderName(cardHolderValue, 'Cardholder name cannot be blank')
+  // Check for valid cardholder name
+  checkForValidCardholderName(cardHolderValue, 'Cardholder name cannot be blank');
 
-  //check for valid credit card format
-  checksIfValidFormatFor(creditCardValue, creditCardNumber, 'Credit Card cannot be blank', 'Invalid Format. Numbers only')
+  // Check for valid credit card format
+  checksIfValidFormatFor(creditCardValue, creditCardNumber, 'Credit Card cannot be blank', 'Invalid Format. Numbers only');
 
-  //check for valid expiration dates for month
-  checksIfValidFormatFor(expMonthValue, expYear, 'Cannot be blank', 'Invalid Format. Numbers only')
+  // Check for valid expiration dates for month
+  checksIfValidFormatFor(expMonthValue, expMonth, 'Cannot be blank', 'Invalid Format. Numbers only');
 
-  //check for valid expiration dates for year
-  checksIfValidFormatFor(expYearValue, expYear, 'Cannot be blank', 'Invalid Format. Numbers only')
+  // Check for valid expiration dates for year
+  checksIfValidFormatFor(expYearValue, expYear, 'Cannot be blank', 'Invalid Format. Numbers only');
 
-  //check for valid CVC
-  checksIfValidFormatFor(cvcValue, cvc, 'Cannot be blank', 'Invalid Format. Numbers only')
-  //if all required fields are filled out
-  // display the confirmation
-  // else
-  // do nothing & show the form
+  // Check for valid CVC
+  checksIfValidFormatFor(cvcValue, cvc, 'Cannot be blank', 'Invalid Format. Numbers only');
 
-
-   
-  
-
-  if (cardHolderValue !== '' && creditCardValue !== '' && expMonthValue !== '' && cvcValue !== '') {
-    //display the confirmation
-    document.getElementById('confirmation-thank').style.display = 'flex'
-    e.preventDefault()
-    //hide the form
-    document.getElementById('form').style.display = 'none'
+  // If all required fields are filled out, display the confirmation
+  if (cardHolderValue !== '' && creditCardValue !== '' && expMonthValue !== '' && expYearValue !== '' && cvcValue !== '') {
+    document.getElementById('confirmation-thank').style.display = 'flex';
+    // Hide the form
+    document.getElementById('form').style.display = 'none';
   }
-  return false
-})
-
-
-function resetForm(){
-    const form = document.getElementById('form')
-    form.reset()
-}
-
-function showForm() {
-  document.getElementById('confirmation-thank').style.display = 'none'
-  document.getElementById('form').style.display = 'block'
-
-  resetForm()
-}
-
-const resetButton = document.getElementById('continue-button');
-resetButton.addEventListener('click', () => {
-
-  showForm();
 });
 
-
-function checkForValidCardholderName(cardholderValue, errorMessage) {
-   
-  //check for valid cardholder name
+function checkForValidCardholderName(cardholderValue, errorMessage) { 
+  // Check for valid cardholder name
   if (cardholderValue === '') {
-    //show error
-    //add error class
-    setErrorFor(cardHolderName, errorMessage)
+    // Show error
+    // Add error class
+    setErrorFor(cardHolderName, errorMessage);
+  } else {
+    // Remove error if valid
+    removeErrorFor(cardHolderName);
   }
 }
 
 function checksIfValidFormatFor(inputFieldValue, inputFieldName, errorMessage1, errorMessage2) {
-  //checks for valid format
+  // Check for valid format
   if (inputFieldValue === '') {
-    setErrorFor(inputFieldName, errorMessage1)
-    return false
+    setErrorFor(inputFieldName, errorMessage1);
+    return false;
   } else if (!isValidFormat(inputFieldValue)) {
-    setErrorFor(inputFieldName, errorMessage2)
-    return false
+    setErrorFor(inputFieldName, errorMessage2);
+    return false;
   } else {
-    setSuccessFor(inputFieldName)
+    setSuccessFor(inputFieldName);
   }
 }
 
-function setErrorFor(nameOfInputField, errorMessage) {
-  const inputs = nameOfInputField.parentElement //.inputs class
-  const small = inputs.querySelector('small')
-
-  //add error message inside <small> tag
-  small.innerText = errorMessage
-
-  //add the error class
-  inputs.className = 'inputs error'
+function isValidFormat(nameOfInputField) {
+  // Check if value contains only numbers
+  const creditCardRegex = /^[0-9]*$/;
+  return creditCardRegex.test(nameOfInputField);
 }
 
+function setErrorFor(nameOfInputField, errorMessage) {
+  const inputs = nameOfInputField.parentElement; // .inputs class
+  const small = inputs.querySelector('small');
+
+  // Add error message inside <small> tag
+  small.innerText = errorMessage;
+
+  // Add the error class
+  inputs.classList.add('error');
+}
+
+function removeErrorFor(nameOfInputField) {
+  const inputs = nameOfInputField.parentElement; // .inputs class
+  const small = inputs.querySelector('small');
+
+  // Remove error message
+  small.innerText = '';
+
+  // Remove the error class
+  inputs.classList.remove('error');
+}
 
 function setSuccessFor(nameOfInputField) {
-  const inputs = nameOfInputField.parentElement //.input class
-  inputs.className = 'inputs success'
+  const inputs = nameOfInputField.parentElement; // .input class
+  inputs.classList.add('success');
 }
 
-
-
-function isValidFormat(nameOfInputField) {
-  //check if value are all numbers
-  ///^\d+$/ Regular expression pattern to match numbers only
-  return /^\d+$/.test(nameOfInputField)
+function resetForm(){
+  const form = document.getElementById('form');
+  form.reset();
 }
 
+function showForm() {
+  document.getElementById('confirmation-thank').style.display = 'none';
+  document.getElementById('form').style.display = 'block';
+  resetForm();
+}
 
+const resetButton = document.getElementById('continue-button');
+resetButton.addEventListener('click', () => {
+  showForm();
+});

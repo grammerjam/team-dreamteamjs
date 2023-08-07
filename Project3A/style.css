@@ -213,13 +213,14 @@ button {
 
 .thankyou-form{
     display: none;
-    padding-top: 14rem;
+    position: fixed;
     flex-direction: column;
-    margin-left: 7rem;
-    width: auto;
     justify-content: center;
     align-items: center;
-    
+    top: 50%;
+    padding: 20px;
+    transform: translate(-50%, -50%);
+    left: 70%;
    }
    
    .thankyou-img{
@@ -437,6 +438,16 @@ button {
       display: block;
       font-size: 18px;
       font-family: "Space Grotesk", "sans-serf"; 
+    }
+
+    .thankyou-form{
+      left: 50%;
+      align-self: center;
+      margin-top: 30px;
+    }
+
+    .thankyou-button{
+      width: 300px;
     }
   }
 
