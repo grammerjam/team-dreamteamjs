@@ -151,14 +151,33 @@
             inputElement.value === '' ? outputElement.innerHTML = 'JOHN WICK' :  outputElement.innerHTML = inputElement.value;
            
     }
-   function handleCardNumberKeyup() {
-            const inputElement = document.getElementById("cnum");
-            const outputElement = document.getElementById("duplicateFieldnum");
-            outputElement.textContent = inputElement.value;
+            function handleCardNumberKeyup() {
+          const inputElement = document.getElementById("cnum");
+          const outputElement = document.getElementById("duplicateFieldnum");
+          
+          const inputValue = inputElement.value;
+          const spacedValue = insertSpaceAfterFourth(inputValue);
 
-            inputElement.value === '' ? outputElement.innerHTML = '1111 2222 3333 4444' :  outputElement.innerHTML = inputElement.value;
+          if (inputValue === '') {
+            outputElement.innerHTML = '1111 2222 3333 4444'; // Default value when input is empty
+          } else {
+            outputElement.innerHTML = spacedValue;
+          }
+        }
 
-    }
+        function insertSpaceAfterFourth(str) {
+          let result = '';
+
+          for (let i = 0; i < str.length; i++) {
+            result += str[i];
+            if ((i + 1) % 4 === 0) {
+              result += ' ';
+            }
+          }
+
+          return result;
+        }
+
 
    function handleCardMonthKeyup() {
             const inputElement = document.getElementById("expmonth");
