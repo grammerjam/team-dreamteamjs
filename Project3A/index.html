@@ -47,14 +47,14 @@
               <label class="cardwords" for="cname">CARDHOLDER NAME</label>
             </div>
             <div class="inputs">
-              <input class="cardinput" type="text" id="cname" name="cardname" placeholder="e.g. John Wick">
+              <input class="cardinput" type="text" id="cname" name="cardname" maxlength="45" placeholder="e.g. John Wick" required>
               <small>error message</small>
             </div>
             <div class="labels">
               <label class="cardwords" id="ccnum">CARD NUMBER</label>
             </div>
             <div class="inputs">
-              <input class="cardinput" type="text" id="cnum" name="cardnumber" placeholder="e.g. 1111-2222-3333-4444">
+              <input class="cardinput" type="text" id="cnum" name="cardnumber" placeholder="e.g. 1111-2222-3333-4444" maxlength="16" pattern="[0-9]{16}" required>
               <small>error message</small>
               <div class="expiration-cvc">
                 <div class="labels" id="labels-expiration-cvc">
@@ -62,11 +62,15 @@
                   <label class="cardwords-cvc" for="cvc">CVC</label>
                 </div>
                 <div class="inputs" id="inputs-expiration-cvc">
-                  <input class="cardmonth" type="text" id="expmonth" name="expmonth" placeholder="01">
-                  <input class="cardyear" type="text" id="expyear" name="expyear" placeholder="27">
-                  <small>error message</small>
-                  <input class="cardcvc" type="text" id="cvc" name="cvc" placeholder="e.g. 333">
-                  <small>error message</small>
+                  <input class="cardmonth" type="text" id="expmonth" name="expmonth" maxlength="2" placeholder="01" pattern="^(0[1-9]|1[0-2])$" required>
+                  <input class="cardyear" type="text" id="expyear" name="expyear" maxlength="2" placeholder="27" pattern="^(2[4-9]|3[0-4])$" required>
+                  <div class="input-container">
+                    <small>error message</small>
+                  </div>
+                  <input class="cardcvc" type="text" id="cvc" name="cvc" maxlength="3" placeholder="e.g. 333" pattern="[0-9]{3}" required>
+                  <div class="input-container">
+                    <small>error message</small>
+                  </div>
                 </div>
               </div>
             </div>

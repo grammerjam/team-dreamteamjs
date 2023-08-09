@@ -18,19 +18,19 @@ form.addEventListener('submit', e => {
   const cvcValue = cvc.value.trim();
 
   // Check for valid cardholder name
-  checkForValidCardholderName(cardHolderValue, 'Cardholder name cannot be blank');
+  checkForValidCardholderName(cardHolderValue, 'Cardholder name cannot be blank',);
 
   // Check for valid credit card format
-  checksIfValidFormatFor(creditCardValue, creditCardNumber, 'Credit Card cannot be blank', 'Invalid Format. Numbers only');
+  checksIfValidFormatFor(creditCardValue, creditCardNumber, 'Credit Card cannot be blank', 'Invalid inputs. Please check the values.');
 
   // Check for valid expiration dates for month
-  checksIfValidFormatFor(expMonthValue, expMonth, 'Cannot be blank', 'Invalid Format. Numbers only');
+  checksIfValidFormatFor(expMonthValue, expMonth, 'Cannot be blank');
 
   // Check for valid expiration dates for year
-  checksIfValidFormatFor(expYearValue, expYear, 'Cannot be blank', 'Invalid Format. Numbers only');
+  checksIfValidFormatFor(expYearValue, expYear, 'Cannot be blank');
 
   // Check for valid CVC
-  checksIfValidFormatFor(cvcValue, cvc, 'Cannot be blank', 'Invalid Format. Numbers only');
+  checksIfValidFormatFor(cvcValue, cvc, 'Cannot be blank');
 
   // If all required fields are filled out, display the confirmation
   if (cardHolderValue !== '' && creditCardValue !== '' && expMonthValue !== '' && expYearValue !== '' && cvcValue !== '') {
@@ -41,11 +41,14 @@ form.addEventListener('submit', e => {
 });
 
 function checkForValidCardholderName(cardholderValue, errorMessage) { 
+const cardNums = /\d/;
   // Check for valid cardholder name
   if (cardholderValue === '') {
     // Show error
     // Add error class
     setErrorFor(cardHolderName, errorMessage);
+  } else if (cardNums.test(cardHolderName)){
+    setErrorFor(cardHolderName, errorMessage)
   } else {
     // Remove error if valid
     removeErrorFor(cardHolderName);
@@ -67,8 +70,9 @@ function checksIfValidFormatFor(inputFieldValue, inputFieldName, errorMessage1, 
 
 function isValidFormat(nameOfInputField) {
   // Check if value contains only numbers
-  const creditCardRegex = /^[0-9]*$/;
+  const creditCardRegex = /^[0-9]{16}$/;
   return creditCardRegex.test(nameOfInputField);
+
 }
 
 function setErrorFor(nameOfInputField, errorMessage) {
@@ -79,7 +83,7 @@ function setErrorFor(nameOfInputField, errorMessage) {
   small.innerText = errorMessage;
 
   // Add the error class
-  inputs.classList.add('error');
+//   inputs.classList.add('error');
 }
 
 function removeErrorFor(nameOfInputField) {
@@ -93,10 +97,15 @@ function removeErrorFor(nameOfInputField) {
   inputs.classList.remove('error');
 }
 
+
 function setSuccessFor(nameOfInputField) {
   const inputs = nameOfInputField.parentElement; // .input class
   inputs.classList.add('success');
 }
+
+
+
+
 
 function resetForm(){
   const form = document.getElementById('form');
